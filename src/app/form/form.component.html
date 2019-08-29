@@ -1,0 +1,28 @@
+<div class="main-form-div">
+  <div class="nameDiv">
+    <label for="nameInputBox">Name</label>
+    <input id="nameInputBox" type="text" name="name" (input)="handleInput($event)" value={{name}} />
+  </div>
+  <div class="ageDiv">
+    <label for="ageInputBox">Age</label>
+    <input id="ageInputBox" type="text" name="age" (input)="handleInput($event)" value={{age}} />
+    <input type="button" (click)="handleAdd()" value="Add" />
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>S No.</th>
+        <th>Name</th>
+        <th>Age</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let detail of details; let i = index">
+        <td>{{i+1}}</td>
+        <td>{{detail.name}}</td>
+        <td>{{detail.age}}</td>
+      </tr>
+    </tbody>
+
+  </table>
+</div>

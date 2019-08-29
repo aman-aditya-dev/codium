@@ -1,0 +1,47 @@
+.main-form-div {
+  margin: auto;
+  width: 50%;
+  margin-top: 10px;
+
+  .nameDiv {
+    width: 100%;
+
+    label {
+      width: 40%;
+      padding-right: 60px;
+    }
+  }
+
+  .ageDiv {
+    margin-top: 10px;
+    width: 100%;
+
+    label {
+      width: 40%;
+      padding-right: 70px;
+    }
+
+    input {
+      margin-right: 20px;
+    }
+  }
+
+  table {
+    border: 2px solid black;
+    margin-top: 50px;
+
+    tbody,
+    thead {
+      outline: 1px solid black;
+    }
+
+    tbody tr td,
+    thead th {
+      width: 150px;
+      text-align: left;
+      border-right: 1px solid black;
+    }
+
+    tbody tr td {}
+  }
+}
