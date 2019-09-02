@@ -1,0 +1,136 @@
+.todo {
+  width: 40%;
+  margin: auto;
+
+  .form-addTodo {
+    display: grid;
+
+    p {
+      display: flex;
+
+      label {
+        width: 30%;
+      }
+
+      input {
+        width: 50%;
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid blue;
+      }
+
+      input:focus {
+        outline: none;
+      }
+    }
+
+    .addBtn {
+      width: 30%;
+      float: right;
+      background: blue;
+      padding: 12px;
+      color: white;
+      border-radius: 10px;
+      margin-left: 54%;
+    }
+  }
+
+  .form-iteration {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    // background: #e7e7e7;
+
+    .todo-stage {
+      width: 33.33%;
+    }
+
+    .inprogress-stage {
+      width: 33.33%;
+
+    }
+
+    .done-stage {
+      width: 33.33%;
+
+    }
+
+    .title {
+      margin: 0;
+      text-align: center;
+      color: white;
+      text-transform: capitalize;
+    }
+
+    .main-title {
+      text-align: center;
+    }
+
+
+
+    .todo-stage-bg {
+      padding: 10px;
+      border: 2px solid black;
+      height: 99px;
+      margin-bottom: 5px;
+      background: #e7e7e7;
+
+      .title {
+        background-color: blue;
+
+      }
+
+      .stageChange {
+        background-color: yellow;
+      }
+
+    }
+
+    .inprogress-stage-bg {
+      padding: 10px;
+      border: 2px solid black;
+      height: 99px;
+      margin-bottom: 5px;
+      background: #e7e7e7;
+
+      .title {
+        background-color: yellow;
+      }
+
+      .stageChange {
+        background-color: green;
+      }
+
+    }
+
+    .done-stage-bg {
+      padding: 10px;
+      border: 2px solid black;
+      height: 99px;
+      margin-bottom: 5px;
+      background: #e7e7e7;
+
+      .title {
+        background-color: green;
+      }
+
+      .stageChange {
+        background-color: red;
+      }
+    }
+  }
+
+  .stageChange {
+    float: right;
+
+  }
+
+  .addTodoview {
+    position: absolute;
+    right: 0;
+    padding: 10px;
+    background: blue;
+    border-radius: 10px;
+
+  }
+}

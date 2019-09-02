@@ -8,6 +8,8 @@
     <input id="ageInputBox" type="text" name="age" (input)="handleInput($event)" value={{age}} />
     <input type="button" (click)="handleAdd()" value="Add" />
   </div>
+
+  <input type="text" (input)="handleSearch($event)" />
   <table>
     <thead>
       <tr>

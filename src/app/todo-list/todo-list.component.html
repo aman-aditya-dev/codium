@@ -1,0 +1,44 @@
+<div class="todo">
+  <div class="form-addTodo" *ngIf="!showTodo">
+    Add your Todo Here !!
+    <p>
+      <label for="title">Title</label>
+      <input id="title" name="title" type="text" (input)="handleInput($event)" placeholder="Title" value={{title}} />
+    </p>
+    <p>
+      <label for="desc">Description</label>
+      <input name="desc" type="text" (input)="handleInput($event)" placeholder="Description" value={{desc}} />
+    </p>
+    <input class="addBtn" type="button" (click)="handleAdd()" value="Add" />
+    <input class="addBtn" type="button" (click)="handleView('mytodo')" value="View" />
+  </div>
+
+  <div class="form-iteration" *ngIf="showTodo">
+    <div class="todo-stage">
+      <h3 class="main-title">TODO</h3>
+      <div class="todo-stage-bg" *ngFor="let detail of filterItemsOfType('todo'); let i = index">
+        <h3 class="title">{{detail.title}}</h3>
+        <p>{{detail.desc}}</p>
+        <input class="stageChange" type="button" (click)="handleStageChange('inprogress', detail.id)" value="--->" />
+      </div>
+    </div>
+    <div class="inprogress-stage">
+      <h3 class="main-title">Inprogress</h3>
+      <div class="inprogress-stage-bg" *ngFor="let detail of filterItemsOfType('inprogress'); let i = index">
+        <h3 class="title">{{detail.title}}</h3>
+        <p>{{detail.desc}}</p>
+        <input class="stageChange" type="button" (click)="handleStageChange('done', detail.id)" value="--->" />
+      </div>
+    </div>
+    <div class="done-stage">
+      <h3 class="main-title">Done</h3>
+      <div class="done-stage-bg" *ngFor="let detail of filterItemsOfType('done'); let i = index">
+        <h3 class="title">{{detail.title}}</h3>
+        <p>{{detail.desc}}</p>
+        <input class="stageChange" type="button" (click)="handleRemove(detail.id)" value="X" />
+      </div>
+    </div>
+    <input class="addTodoview" type="button" (click)="handleView('addtodo')" value="Add your ToDo" />
+  </div>
+
+</div>
