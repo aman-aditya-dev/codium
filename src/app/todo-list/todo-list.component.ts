@@ -19,7 +19,7 @@ export class TodoListComponent implements OnInit {
 	}
 
 	handleInput(e) {
-		const name = e.target.name;
+		const name: string = e.target.name;
 		this[name] = e.target.value;
 	}
 
@@ -37,18 +37,18 @@ export class TodoListComponent implements OnInit {
 		localStorage.setItem('todoList', JSON.stringify(this.todoList));
 	}
 
-	filterItemsOfType(type) {
+	filterItemsOfType(type: string) {
 		return this.todoList.filter((x) => x.type === type);
 	}
-	handleStageChange(type, index) {
+	handleStageChange({ type, index }: { type: string; index: number }) {
 		this.todoList[index].type = type;
 		localStorage.setItem('todoList', JSON.stringify(this.todoList));
 	}
-	handleRemove(index) {
+	handleRemove(index: number) {
 		this.todoList.splice(index, 1);
 		localStorage.setItem('todoList', JSON.stringify(this.todoList));
 	}
-	handleView(type) {
+	handleView(type: string) {
 		type === 'mytodo' ? (this.showTodo = true) : (this.showTodo = false);
 	}
 }
